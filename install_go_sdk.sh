@@ -7,14 +7,14 @@ wget "https://dl.google.com/go/${GZFILE}";
 rm -rf /usr/local/go;                       # 删除旧的go安装文件
 tar -C /usr/local -xzf $GZFILE;             # 解压文件到 /usr/local/go目录中
 
-cat << EOF >> ~/.bashrc
+cat << "EOF" >> ~/.bashrc
 
 # environment for go sdk
 export GOROOT=/usr/local/go
-export PATH=\$PATH:\$GOROOT/bin
+export PATH=$PATH:$GOROOT/bin
 export GOPATH=/opt/go
-export GOBIN=\$GOPATH/bin
-export PATH=\$PATH:\$GOBIN
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
 export GOPROXY=https://goproxy.cn,direct
 export GO1111MODULE=on
 
